@@ -162,7 +162,6 @@
 				3CDA8883B470060687969BA7 /* Pods-ProjectTemplateUITests.debug.xcconfig */,
 				A2567DEAFA1CC23AAA5B03D1 /* Pods-ProjectTemplateUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -580,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudist.ProjectTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudist.ProjectTemplate123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudist.ProjectTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudist.ProjectTemplate123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
