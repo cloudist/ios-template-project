@@ -51,9 +51,6 @@ target 'ios-template-project' do
   target 'ios-template-projectTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
-    pod 'Nimble-Snapshots'
   end
 
   target 'ios-template-projectUITests' do
