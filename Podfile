@@ -4,7 +4,6 @@ platform :ios, '10.0'
 def test_pods
   pod 'Quick'
   pod 'Nimble'
-  pod 'Nimble-'
 end
 
 target 'ios-template-project' do
@@ -49,7 +48,6 @@ target 'ios-template-project' do
   pod 'CocoaLumberjack/Swift'
   pod 'FDFullscreenPopGesture'
   pod 'R.swift', '~> 5.0.0.alpha.3'
-
   pod 'SwiftLint'
 
   # Pods for ios-template-project
