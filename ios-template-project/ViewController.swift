@@ -14,9 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         #if ADHOC
-        print("ADHOC")
+        print("adhoc")
+        #elseif DEBUG
+        print("debug")
         #else
-        print("other")
+        print("release")
         #endif
     }
 
