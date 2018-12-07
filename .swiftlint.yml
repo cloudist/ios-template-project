@@ -1,8 +1,8 @@
 disabled_rules: # 执行时排除掉的规则
   - trailing_whitespace
+  - type_name
 opt_in_rules: # 一些规则仅仅是可选的
   - empty_count
-  - missing_docs
   - array_init
   - attributes
   - closure_end_indentation
@@ -11,7 +11,7 @@ opt_in_rules: # 一些规则仅仅是可选的
   - fatal_error_message
   - legacy_random
   - let_var_whitespace
-  - yoda_condition
+  - yoda_condition # 尤达
 
   # 可以通过执行如下指令来查找所有可用的规则:
   # swiftlint rules
@@ -46,15 +46,6 @@ file_length:
 
 vertical_whitespace:
   max_empty_lines: 2
-
-# 命名规则可以设置最小长度和最大程度的警告/错误
-# 此外它们也可以设置排除在外的名字
-type_name:
-  min_length: 4 # 只是警告
-  max_length: # 警告和错误
-    warning: 40
-    error: 50
-  excluded: iPhone # 排除某个名字
 
 identifier_name:
   min_length: # 只有最小长度

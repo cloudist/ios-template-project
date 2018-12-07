@@ -7,9 +7,8 @@
 //
 
 import XCTest
-// swiftlint:disable type_name
+
 class ios_template_projectUITests: XCTestCase {
-// swiftlint:enable type_name
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
