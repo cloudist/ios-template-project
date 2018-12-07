@@ -63,5 +63,7 @@ identifier_name:
     - id
     - URL
     - GlobalAPIKey
+    - to
+    - x
 
 reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)

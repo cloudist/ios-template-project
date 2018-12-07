@@ -12,7 +12,7 @@ target 'ios-template-project' do
   pod 'RxDataSources'
   pod 'RxSwiftExt'
   pod 'Action'
-   pod 'NSObject+Rx'
+  pod 'NSObject+Rx'
 
   # network 
   pod 'Alamofire'
@@ -51,6 +51,9 @@ target 'ios-template-project' do
   target 'ios-template-projectTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Nimble-Snapshots'
   end
 
   target 'ios-template-projectUITests' do
