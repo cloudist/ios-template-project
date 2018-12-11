@@ -12,7 +12,7 @@
     ```
     $ toxic p c YellowDuck
     ```
-3. 回答几个问题完事
+3. 回答几个问题等待完成，由于 `R.Swift`生成的文件为加入版本控制，第一次 build 会失败，再 build 一次就行了
 
 ## 集成的 pod 库
 - ReactiveX

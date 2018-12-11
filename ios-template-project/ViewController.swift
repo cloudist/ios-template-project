@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIFontComplete
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,18 @@ class ViewController: UIViewController {
         #else
         print("release")
         #endif
+        
+        
+//        let font = CustomFont.consolas.of(size: 22.0)
+        let font = R.font.consolas(size: 22)
+        let label = UILabel()
+        label.font = font
+        label.textColor = .black
+        label.text = "google"
+        label.frame = CGRect(x: 50, y: 50, width: 100, height: 50)
+        view.addSubview(label)
+        
+        
     }
 
 }

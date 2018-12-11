@@ -1,6 +1,8 @@
 disabled_rules: # 执行时排除掉的规则
   - trailing_whitespace
   - type_name
+  - line_length
+  - identifier_name
 opt_in_rules: # 一些规则仅仅是可选的
   - empty_count
   - array_init
@@ -29,32 +31,15 @@ force_cast: warning # 隐式
 force_try:
   severity: warning # 显式
 
-# 同时有警告和错误等级的规则，可以只设置它的警告等级
-# 隐式
-line_length:
-  ignores_comments: true
-  warning: 150
-  error: 180
-
 type_body_length:
   warning: 300 
   error: 400
 
 file_length:
-  warning: 800
+  warning: 1000
   error: 1200
 
 vertical_whitespace:
   max_empty_lines: 2
-
-identifier_name:
-  min_length: # 只有最小长度
-    error: 4 # 只有错误
-  excluded: # 排除某些名字
-    - id
-    - URL
-    - GlobalAPIKey
-    - to
-    - x
 
 reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)
