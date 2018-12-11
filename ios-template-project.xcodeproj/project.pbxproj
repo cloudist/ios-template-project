@@ -37,6 +37,9 @@
 		3AF020FF21BF8C12008A2DFF /* UITextField+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF020EE21BF8C12008A2DFF /* UITextField+Ex.swift */; };
 		3AF0210221BF9CC5008A2DFF /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210121BF9CC5008A2DFF /* CustomFont.swift */; };
 		3AF0210421BF9FFD008A2DFF /* consola.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AF0210321BF9FFD008A2DFF /* consola.ttf */; };
+		3AF0210A21BFAE29008A2DFF /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */; };
+		3AF0210E21BFB55C008A2DFF /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210D21BFB55C008A2DFF /* DataRepository.swift */; };
+		3AF0211021BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */; };
 		4117C83AA7C0E9CA159ADE16 /* Pods_ios_template_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4173E6DB8EE2B9A8B9AA7814 /* Pods_ios_template_project.framework */; };
 		5823097C9BB45F11F26F369F /* Pods_ios_template_projectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120E5700CFAF4584132730E /* Pods_ios_template_projectUITests.framework */; };
 		76380B278D815E6C6E1BCCF4 /* Pods_ios_template_projectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC99D5618457AEC6420B882A /* Pods_ios_template_projectTests.framework */; };
@@ -99,6 +102,9 @@
 		3AF020EE21BF8C12008A2DFF /* UITextField+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Ex.swift"; sourceTree = "<group>"; };
 		3AF0210121BF9CC5008A2DFF /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		3AF0210321BF9FFD008A2DFF /* consola.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = consola.ttf; sourceTree = "<group>"; };
+		3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		3AF0210D21BFB55C008A2DFF /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandlerPlugin.swift; sourceTree = "<group>"; };
 		3F798E405A550D7E2A62ADA4 /* Pods-ios-template-projectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-template-projectTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-template-projectTests/Pods-ios-template-projectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4173E6DB8EE2B9A8B9AA7814 /* Pods_ios_template_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_template_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5C6049DC1C74C337F78A4E /* Pods-ios-template-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-template-project.release.xcconfig"; path = "Target Support Files/Pods-ios-template-project/Pods-ios-template-project.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,13 +199,16 @@
 			children = (
 				3A54F3C021BA3755003D79E1 /* R.generated.swift */,
 				3AF020C421BF610F008A2DFF /* AppDelegate */,
+				3AF0210621BFAA37008A2DFF /* Scenes */,
+				3AF0210821BFAD5E008A2DFF /* NetworkConfig */,
+				3AF0210721BFAD4D008A2DFF /* Data */,
 				3AF020C721BF80E5008A2DFF /* Utils */,
+				3AF020C321BF60CE008A2DFF /* Configurations */,
 				3A54F38421B8F7B9003D79E1 /* ViewController.swift */,
 				3A54F38621B8F7B9003D79E1 /* Main.storyboard */,
 				3A54F38921B8F7BA003D79E1 /* Assets.xcassets */,
 				3A54F38B21B8F7BA003D79E1 /* LaunchScreen.storyboard */,
 				3A54F38E21B8F7BA003D79E1 /* Info.plist */,
-				3AF020C321BF60CE008A2DFF /* Configurations */,
 			);
 			path = "ios-template-project";
 			sourceTree = "<group>";
@@ -410,6 +419,30 @@
 				3AF0210321BF9FFD008A2DFF /* consola.ttf */,
 			);
 			path = CustomFont;
+			sourceTree = "<group>";
+		};
+		3AF0210621BFAA37008A2DFF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3AF0210721BFAD4D008A2DFF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0210D21BFB55C008A2DFF /* DataRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3AF0210821BFAD5E008A2DFF /* NetworkConfig */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */,
+				3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */,
+			);
+			path = NetworkConfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -784,12 +817,15 @@
 				3AF020FE21BF8C12008A2DFF /* String+Ex.swift in Sources */,
 				3AF020FC21BF8C12008A2DFF /* UIViewController+Ex.swift in Sources */,
 				3AF020F221BF8C12008A2DFF /* UIScrollView+Ex.swift in Sources */,
+				3AF0210A21BFAE29008A2DFF /* NetworkConfig.swift in Sources */,
 				3AF020F721BF8C12008A2DFF /* UIView+Ex.swift in Sources */,
+				3AF0210E21BFB55C008A2DFF /* DataRepository.swift in Sources */,
 				3AF020FA21BF8C12008A2DFF /* UIImageView+Ex.swift in Sources */,
 				3AF020F321BF8C12008A2DFF /* UIWindow+Ex.swift in Sources */,
 				3A54F38521B8F7B9003D79E1 /* ViewController.swift in Sources */,
 				3AF020F821BF8C12008A2DFF /* UICollectionView+Ex.swift in Sources */,
 				3A54F38321B8F7B9003D79E1 /* AppDelegate.swift in Sources */,
+				3AF0211021BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift in Sources */,
 				3A54F3C121BA3755003D79E1 /* R.generated.swift in Sources */,
 				3AF020FF21BF8C12008A2DFF /* UITextField+Ex.swift in Sources */,
 				3AF020F421BF8C12008A2DFF /* UILabel+Ex.swift in Sources */,
