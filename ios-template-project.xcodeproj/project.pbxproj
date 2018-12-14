@@ -16,7 +16,6 @@
 		3A54F3A321B8F7BA003D79E1 /* ios_template_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3A221B8F7BA003D79E1 /* ios_template_projectUITests.swift */; };
 		3A54F3C121BA3755003D79E1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3C021BA3755003D79E1 /* R.generated.swift */; };
 		3A54F3C321BA5CD1003D79E1 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3C221BA5CD1003D79E1 /* ViewControllerSpec.swift */; };
-		3AF020C021BF5DEC008A2DFF /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3AF020BF21BF5DEB008A2DFF /* Debug.xcconfig */; };
 		3AF020C621BF613A008A2DFF /* AppDelegate+PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF020C521BF613A008A2DFF /* AppDelegate+PushNotification.swift */; };
 		3AF020EF21BF8C12008A2DFF /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF020CF21BF8C12008A2DFF /* UIImage+Ex.swift */; };
 		3AF020F021BF8C12008A2DFF /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF020D121BF8C12008A2DFF /* Misc.swift */; };
@@ -40,6 +39,17 @@
 		3AF0210A21BFAE29008A2DFF /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */; };
 		3AF0210E21BFB55C008A2DFF /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210D21BFB55C008A2DFF /* DataRepository.swift */; };
 		3AF0211021BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */; };
+		3AF0211221BFC9E5008A2DFF /* AccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0211121BFC9E5008A2DFF /* AccountApi.swift */; };
+		3AF0211621BFCD56008A2DFF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0211521BFCD56008A2DFF /* User.swift */; };
+		3AF0211A21C0B023008A2DFF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0211921C0B023008A2DFF /* Constant.swift */; };
+		3AF0211E21C1F088008A2DFF /* Moya+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0211D21C1F088008A2DFF /* Moya+Ext.swift */; };
+		3AF0212121C205FA008A2DFF /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0212021C205FA008A2DFF /* UserManager.swift */; };
+		3AF0212921C24FA5008A2DFF /* UIView+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0212821C24FA5008A2DFF /* UIView+HUD.swift */; };
+		3AF0212B21C34718008A2DFF /* HUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0212A21C34718008A2DFF /* HUDSuccessView.swift */; };
+		3AF0212D21C34816008A2DFF /* HUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0212C21C34816008A2DFF /* HUDAnimating.swift */; };
+		3AF0212F21C34946008A2DFF /* NVActivityIndicatorViewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0212E21C34946008A2DFF /* NVActivityIndicatorViewWrapperView.swift */; };
+		3AF0213121C34ABE008A2DFF /* HUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0213021C34ABE008A2DFF /* HUDErrorView.swift */; };
+		3AF0213321C3523F008A2DFF /* UIViewHUD+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0213221C3523F008A2DFF /* UIViewHUD+Rx.swift */; };
 		4117C83AA7C0E9CA159ADE16 /* Pods_ios_template_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4173E6DB8EE2B9A8B9AA7814 /* Pods_ios_template_project.framework */; };
 		5823097C9BB45F11F26F369F /* Pods_ios_template_projectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120E5700CFAF4584132730E /* Pods_ios_template_projectUITests.framework */; };
 		76380B278D815E6C6E1BCCF4 /* Pods_ios_template_projectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC99D5618457AEC6420B882A /* Pods_ios_template_projectTests.framework */; };
@@ -105,6 +115,17 @@
 		3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		3AF0210D21BFB55C008A2DFF /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandlerPlugin.swift; sourceTree = "<group>"; };
+		3AF0211121BFC9E5008A2DFF /* AccountApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApi.swift; sourceTree = "<group>"; };
+		3AF0211521BFCD56008A2DFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3AF0211921C0B023008A2DFF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3AF0211D21C1F088008A2DFF /* Moya+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Ext.swift"; sourceTree = "<group>"; };
+		3AF0212021C205FA008A2DFF /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3AF0212821C24FA5008A2DFF /* UIView+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HUD.swift"; sourceTree = "<group>"; };
+		3AF0212A21C34718008A2DFF /* HUDSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDSuccessView.swift; sourceTree = "<group>"; };
+		3AF0212C21C34816008A2DFF /* HUDAnimating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDAnimating.swift; sourceTree = "<group>"; };
+		3AF0212E21C34946008A2DFF /* NVActivityIndicatorViewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewWrapperView.swift; sourceTree = "<group>"; };
+		3AF0213021C34ABE008A2DFF /* HUDErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDErrorView.swift; sourceTree = "<group>"; };
+		3AF0213221C3523F008A2DFF /* UIViewHUD+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewHUD+Rx.swift"; sourceTree = "<group>"; };
 		3F798E405A550D7E2A62ADA4 /* Pods-ios-template-projectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-template-projectTests.debug.xcconfig"; path = "Target Support Files/Pods-ios-template-projectTests/Pods-ios-template-projectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4173E6DB8EE2B9A8B9AA7814 /* Pods_ios_template_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_template_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5C6049DC1C74C337F78A4E /* Pods-ios-template-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-template-project.release.xcconfig"; path = "Target Support Files/Pods-ios-template-project/Pods-ios-template-project.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,7 +221,7 @@
 				3A54F3C021BA3755003D79E1 /* R.generated.swift */,
 				3AF020C421BF610F008A2DFF /* AppDelegate */,
 				3AF0210621BFAA37008A2DFF /* Scenes */,
-				3AF0210821BFAD5E008A2DFF /* NetworkConfig */,
+				3AF0210821BFAD5E008A2DFF /* Network */,
 				3AF0210721BFAD4D008A2DFF /* Data */,
 				3AF020C721BF80E5008A2DFF /* Utils */,
 				3AF020C321BF60CE008A2DFF /* Configurations */,
@@ -238,6 +259,7 @@
 				3AF020BF21BF5DEB008A2DFF /* Debug.xcconfig */,
 				3AF020C121BF5E01008A2DFF /* Release.xcconfig */,
 				3AF020C221BF5E0C008A2DFF /* AdHoc.xcconfig */,
+				3AF0211921C0B023008A2DFF /* Constant.swift */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -254,6 +276,7 @@
 		3AF020C721BF80E5008A2DFF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3AF0212621C2493E008A2DFF /* HUD */,
 				3AF0210021BF9CAA008A2DFF /* CustomFont */,
 				3AF020CD21BF8C12008A2DFF /* Extensions */,
 			);
@@ -431,18 +454,59 @@
 		3AF0210721BFAD4D008A2DFF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3AF0210D21BFB55C008A2DFF /* DataRepository.swift */,
+				3AF0211421BFCD48008A2DFF /* Model */,
+				3AF0211F21C2031B008A2DFF /* Local */,
+				3AF0211321BFC9EA008A2DFF /* Remote */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		3AF0210821BFAD5E008A2DFF /* NetworkConfig */ = {
+		3AF0210821BFAD5E008A2DFF /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				3AF0210921BFAE29008A2DFF /* NetworkConfig.swift */,
 				3AF0210F21BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift */,
+				3AF0211D21C1F088008A2DFF /* Moya+Ext.swift */,
 			);
-			path = NetworkConfig;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3AF0211321BFC9EA008A2DFF /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0210D21BFB55C008A2DFF /* DataRepository.swift */,
+				3AF0211121BFC9E5008A2DFF /* AccountApi.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		3AF0211421BFCD48008A2DFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0211521BFCD56008A2DFF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AF0211F21C2031B008A2DFF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0212021C205FA008A2DFF /* UserManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		3AF0212621C2493E008A2DFF /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				3AF0212821C24FA5008A2DFF /* UIView+HUD.swift */,
+				3AF0212A21C34718008A2DFF /* HUDSuccessView.swift */,
+				3AF0213021C34ABE008A2DFF /* HUDErrorView.swift */,
+				3AF0212C21C34816008A2DFF /* HUDAnimating.swift */,
+				3AF0212E21C34946008A2DFF /* NVActivityIndicatorViewWrapperView.swift */,
+				3AF0213221C3523F008A2DFF /* UIViewHUD+Rx.swift */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,7 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF020C021BF5DEC008A2DFF /* Debug.xcconfig in Resources */,
 				3A54F38D21B8F7BA003D79E1 /* LaunchScreen.storyboard in Resources */,
 				3A54F38A21B8F7BA003D79E1 /* Assets.xcassets in Resources */,
 				3A54F38821B8F7B9003D79E1 /* Main.storyboard in Resources */,
@@ -732,6 +795,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -764,6 +828,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -817,17 +882,28 @@
 				3AF020FE21BF8C12008A2DFF /* String+Ex.swift in Sources */,
 				3AF020FC21BF8C12008A2DFF /* UIViewController+Ex.swift in Sources */,
 				3AF020F221BF8C12008A2DFF /* UIScrollView+Ex.swift in Sources */,
+				3AF0212B21C34718008A2DFF /* HUDSuccessView.swift in Sources */,
 				3AF0210A21BFAE29008A2DFF /* NetworkConfig.swift in Sources */,
+				3AF0211E21C1F088008A2DFF /* Moya+Ext.swift in Sources */,
+				3AF0211621BFCD56008A2DFF /* User.swift in Sources */,
 				3AF020F721BF8C12008A2DFF /* UIView+Ex.swift in Sources */,
+				3AF0211221BFC9E5008A2DFF /* AccountApi.swift in Sources */,
 				3AF0210E21BFB55C008A2DFF /* DataRepository.swift in Sources */,
 				3AF020FA21BF8C12008A2DFF /* UIImageView+Ex.swift in Sources */,
+				3AF0212F21C34946008A2DFF /* NVActivityIndicatorViewWrapperView.swift in Sources */,
+				3AF0212D21C34816008A2DFF /* HUDAnimating.swift in Sources */,
 				3AF020F321BF8C12008A2DFF /* UIWindow+Ex.swift in Sources */,
 				3A54F38521B8F7B9003D79E1 /* ViewController.swift in Sources */,
+				3AF0213121C34ABE008A2DFF /* HUDErrorView.swift in Sources */,
 				3AF020F821BF8C12008A2DFF /* UICollectionView+Ex.swift in Sources */,
 				3A54F38321B8F7B9003D79E1 /* AppDelegate.swift in Sources */,
 				3AF0211021BFB8FD008A2DFF /* NetworkErrorHandlerPlugin.swift in Sources */,
+				3AF0213321C3523F008A2DFF /* UIViewHUD+Rx.swift in Sources */,
 				3A54F3C121BA3755003D79E1 /* R.generated.swift in Sources */,
+				3AF0212921C24FA5008A2DFF /* UIView+HUD.swift in Sources */,
 				3AF020FF21BF8C12008A2DFF /* UITextField+Ex.swift in Sources */,
+				3AF0212121C205FA008A2DFF /* UserManager.swift in Sources */,
+				3AF0211A21C0B023008A2DFF /* Constant.swift in Sources */,
 				3AF020F421BF8C12008A2DFF /* UILabel+Ex.swift in Sources */,
 				3AF020FB21BF8C12008A2DFF /* Extension.swift in Sources */,
 				3AF020F921BF8C12008A2DFF /* URL+Ex.swift in Sources */,

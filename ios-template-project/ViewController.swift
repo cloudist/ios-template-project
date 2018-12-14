@@ -8,6 +8,7 @@
 
 import UIKit
 import UIFontComplete
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
@@ -22,16 +23,20 @@ class ViewController: UIViewController {
         print("release")
         #endif
         
-        
+        let x: String = Bundle.main[Constant.baseURL]
+        print(x)
 //        let font = CustomFont.consolas.of(size: 22.0)
-        let font = R.font.consolas(size: 22)
-        let label = UILabel()
-        label.font = font
-        label.textColor = .black
-        label.text = "google"
-        label.frame = CGRect(x: 50, y: 50, width: 100, height: 50)
-        view.addSubview(label)
+//        let font = R.font.consolas(size: 22)
+
+
+        view.showLoading(title: "加载中...")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.view.hideLoading()
+        }
         
+//        view.showInfo(title: "title", subtitle: "subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle", duration: 5)
+//        view.showSuccess(title: "录入成功")
+//        view.showError(title: "录入失败", duration: 5)
         
     }
 

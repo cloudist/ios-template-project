@@ -8,3 +8,6 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+BUGLY_APP_ID = q12a34b
+BASE_URL = https:/$()/www.example.com
