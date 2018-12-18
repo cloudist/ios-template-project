@@ -12,6 +12,18 @@ import Moya
 extension MoyaProvider {
     convenience init(configuration: NetworkConfig) {
         
+        let endPointClosure = { (target: Target) -> Endpoint in
+            let url = target.baseURL.absoluteString + target.path
+            let endpoint = Endpoint(url: url,
+                                    sampleResponseClosure: {
+                                        .networkResponse(200, target.sampleData)
+                                    },
+                                    method: target.method,
+                                    task: target.task,
+                                    httpHeaderFields: target.headers)
+            return endpoint
+        }
+        
         let requestClosure = { (endpoint: Endpoint, closure: RequestResultClosure) in
             do {
                 var urlRequest = try endpoint.urlRequest()
@@ -27,6 +39,6 @@ extension MoyaProvider {
             }
         }
 
-        self.init(requestClosure: requestClosure, manager: configuration.sessionManager(enableSSL: false), plugins: configuration.plugins)
+        self.init(endpointClosure: endPointClosure, requestClosure: requestClosure, manager: configuration.sessionManager(enableSSL: false), plugins: configuration.plugins)
     }
 }

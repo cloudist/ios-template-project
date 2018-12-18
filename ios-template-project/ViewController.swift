@@ -10,7 +10,7 @@ import UIKit
 import UIFontComplete
 import NVActivityIndicatorView
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +34,17 @@ class ViewController: UIViewController {
             self.view.hideLoading()
         }
         
-//        view.showInfo(title: "title", subtitle: "subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle", duration: 5)
+//        view.showInfo(title: "title", subtitle: "subtitle", duration: 5)
 //        view.showSuccess(title: "录入成功")
 //        view.showError(title: "录入失败", duration: 5)
         
+        
     }
 
+}
+
+extension ViewController {
+   func bindViewModel() {
+        
+    }
 }
