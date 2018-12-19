@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ViewControllerCompatible where Self: UIViewController {
+@objc protocol ViewControllerCompatible where Self: UIViewController {
     func addSubviews()
     func addConstrants()
     func bindViewModel()

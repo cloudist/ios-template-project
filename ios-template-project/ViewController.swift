@@ -44,7 +44,7 @@ class ViewController: BaseViewController {
 }
 
 extension ViewController {
-   func bindViewModel() {
+    override func bindViewModel() {
         
     }
 }

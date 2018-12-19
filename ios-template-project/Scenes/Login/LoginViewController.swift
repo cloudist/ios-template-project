@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Action
+import NSObject_Rx
 
 class LoginViewController: BaseViewController {
     
@@ -17,6 +18,7 @@ class LoginViewController: BaseViewController {
         field.placeholder = "username"
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
+        field.borderStyle = .bezel
         return field
     }()
     
@@ -25,29 +27,32 @@ class LoginViewController: BaseViewController {
         field.placeholder = "password"
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
+        field.borderStyle = .bezel
         return field
     }()
     
     lazy var loginBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("登录", for: .normal)
+        btn.backgroundColor = .blue
         return btn
     }()
     
-//    private var viewModel: LoginViewModel
+    private lazy var viewModel: LoginViewModel = {
+        return LoginViewModel(disposeBag: rx.disposeBag)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
-    func addSubviews() {
+    override func addSubviews() {
         view.addSubview(username)
         view.addSubview(password)
         view.addSubview(loginBtn)
     }
 
-    func addConstrants() {
+    override func addConstrants() {
         username.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(100)
@@ -55,17 +60,29 @@ class LoginViewController: BaseViewController {
         }
         
         password.snp.makeConstraints { (make) in
-            make.top.equalTo(username.snp.bottom).inset(30)
+            make.top.equalTo(username.snp.bottom).offset(30)
             make.left.right.height.equalTo(username)
         }
         
         loginBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(password.snp.bottom).inset(30)
+            make.top.equalTo(password.snp.bottom).offset(30)
             make.left.right.height.equalTo(username)
         }
     }
     
-    func bindViewModel() {
-//        loginBtn.rx.
+    override func bindViewModel() {
+        username.rx.text.orEmpty.bind(to: viewModel.input.username).disposed(by: rx.disposeBag)
+        password.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: rx.disposeBag)
+        loginBtn.rx.bind(to: viewModel.input.loginAction, input: ())
+        
+        viewModel.loginBtnEnabled.bind(to: loginBtn.rx.isEnabled).disposed(by: rx.disposeBag)
+        viewModel.loginStatus.subscribe(onNext: { (status) in
+            switch status {
+            case .idle: break
+            case .fetchingToken: break
+            case .failed: break
+            case .success: break
+            }
+        }).disposed(by: rx.disposeBag)
     }
 }

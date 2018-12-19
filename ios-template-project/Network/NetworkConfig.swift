@@ -16,7 +16,7 @@ public class NetworkConfig {
     
     var baseURL: URL = URL(string: Bundle.main[.baseURL])!
     var timeoutInterval: TimeInterval = 60
-    var contentType: String = "Content-Type"
+    var contentType: String = "application/json"
 
     lazy var plugins: [PluginType] = {
         let errorHandler = NetworkErrorHandlerPlugin()

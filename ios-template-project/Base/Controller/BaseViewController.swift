@@ -9,9 +9,22 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         addSubviews()
         addConstrants()
         bindViewModel()
@@ -21,7 +34,7 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
         currentViewController()
     }
-
+    
 }
 
 extension BaseViewController {
@@ -36,4 +49,8 @@ extension BaseViewController {
     }
 }
 
-extension BaseViewController: ViewControllerCompatible {}
+extension BaseViewController: ViewControllerCompatible {
+    func addSubviews() {}
+    func addConstrants() {}
+    func bindViewModel() {}
+}

@@ -31,13 +31,14 @@ class DataRepository {
 }
 
 extension DataRepository {
-    func login(username: String, password: String) -> Observable<User> {
+    func login(username: String, password: String) -> Observable<LoginResponse> {
+        
         return Account.login(param: ["username": username, "password": password])
             .request()
             .asObservable()
-            .filterSuccessfulStatusAndRedirectCodes()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
             .observeOn(MainScheduler.instance)
-            .map(User.self)
+            .filterSuccessfulStatusAndRedirectCodes()
+            .map(LoginResponse.self)
     }
 }
