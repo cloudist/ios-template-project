@@ -3,14 +3,18 @@ PODS:
     - RxCocoa (~> 4.3)
     - RxSwift (~> 4.3)
   - Alamofire (4.8.0)
+  - Bugly (2.5.0)
   - Cache (5.2.0)
   - CocoaLumberjack/Default (3.4.2)
   - CocoaLumberjack/Swift (3.4.2):
     - CocoaLumberjack/Default
   - Device (3.1.2)
   - Differentiator (3.1.0)
+  - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - FSPagerView (0.8.2)
+  - Hero (1.4.0)
+  - IQKeyboardManagerSwift (6.2.0)
   - KeychainAccess (3.1.2)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.15.7)
@@ -30,6 +34,7 @@ PODS:
   - R.swift (5.0.0.alpha.3):
     - R.swift.Library (~> 5.0.0.alpha.2)
   - R.swift.Library (5.0.0.alpha.2)
+  - ReachabilitySwift (4.3.0)
   - Result (4.0.0)
   - RxAtomic (4.4.0)
   - RxCocoa (4.3.1):
@@ -59,6 +64,23 @@ PODS:
   - SDWebImage/Core (4.4.3)
   - SnapKit (4.2.0)
   - SwiftDate (5.0.13)
+  - SwifterSwift (4.6.0):
+    - SwifterSwift/AppKit (= 4.6.0)
+    - SwifterSwift/CoreGraphics (= 4.6.0)
+    - SwifterSwift/CoreLocation (= 4.6.0)
+    - SwifterSwift/Foundation (= 4.6.0)
+    - SwifterSwift/MapKit (= 4.6.0)
+    - SwifterSwift/SpriteKit (= 4.6.0)
+    - SwifterSwift/SwiftStdlib (= 4.6.0)
+    - SwifterSwift/UIKit (= 4.6.0)
+  - SwifterSwift/AppKit (4.6.0)
+  - SwifterSwift/CoreGraphics (4.6.0)
+  - SwifterSwift/CoreLocation (4.6.0)
+  - SwifterSwift/Foundation (4.6.0)
+  - SwifterSwift/MapKit (4.6.0)
+  - SwifterSwift/SpriteKit (4.6.0)
+  - SwifterSwift/SwiftStdlib (4.6.0)
+  - SwifterSwift/UIKit (4.6.0)
   - SwiftLint (0.29.1)
   - UIFontComplete (3.0.0)
   - "UITextView+Placeholder (1.2.1)"
@@ -66,11 +88,15 @@ PODS:
 DEPENDENCIES:
   - Action
   - Alamofire
+  - Bugly
   - Cache
   - CocoaLumberjack/Swift
   - Device
+  - DZNEmptyDataSet
   - FDFullscreenPopGesture
   - FSPagerView
+  - Hero
+  - IQKeyboardManagerSwift
   - KeychainAccess
   - MBProgressHUD
   - MJRefresh
@@ -80,6 +106,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - Quick
   - R.swift (~> 5.0.0.alpha.3)
+  - ReachabilitySwift
   - RxCocoa
   - RxDataSources
   - RxMJ
@@ -88,6 +115,7 @@ DEPENDENCIES:
   - SDWebImage
   - SnapKit
   - SwiftDate
+  - SwifterSwift
   - SwiftLint
   - UIFontComplete
   - "UITextView+Placeholder"
@@ -96,12 +124,16 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Action
     - Alamofire
+    - Bugly
     - Cache
     - CocoaLumberjack
     - Device
     - Differentiator
+    - DZNEmptyDataSet
     - FDFullscreenPopGesture
     - FSPagerView
+    - Hero
+    - IQKeyboardManagerSwift
     - KeychainAccess
     - MBProgressHUD
     - MJRefresh
@@ -112,6 +144,7 @@ SPEC REPOS:
     - Quick
     - R.swift
     - R.swift.Library
+    - ReachabilitySwift
     - Result
     - RxAtomic
     - RxCocoa
@@ -123,6 +156,7 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SwiftDate
+    - SwifterSwift
     - SwiftLint
     - UIFontComplete
     - "UITextView+Placeholder"
@@ -130,12 +164,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Action: 2f461c203c480b17aa99b3bb166e4329ecff6908
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Device: 62242076214c30fb5760174b3601cefafa70a481
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
@@ -146,6 +184,7 @@ SPEC CHECKSUMS:
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   R.swift: ca4207ecc94545a1611ca0b2ae1197458b6ba30a
   R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
@@ -157,10 +196,11 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftDate: f4aea5fa9dee812485f34041121a4cbde01b0dee
+  SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
   UIFontComplete: 5b0f59a83308816c610164b79a2540b3520f9b72
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 8ac960c55c82837f13d874ba7db81601529738f9
+PODFILE CHECKSUM: 7a15093713e1f4191025fb1f1c84165cb60edf00
 
 COCOAPODS: 1.6.0.beta.2

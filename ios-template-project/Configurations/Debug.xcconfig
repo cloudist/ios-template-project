@@ -10,4 +10,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 BUGLY_APP_ID = q12a34b
-BASE_URL = https:/$()/www.example.com
+BASE_URL = http:/$()/demo.toxcloud.com
+ENABLE_NETWORK_LOGGING = YES

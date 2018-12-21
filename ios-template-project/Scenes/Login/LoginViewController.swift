@@ -11,14 +11,14 @@ import SnapKit
 import Action
 import NSObject_Rx
 
-class LoginViewController: BaseViewController {
+class LoginViewController: ViewController {
     
     lazy var username: UITextField = {
         let field = UITextField()
         field.placeholder = "username"
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
-        field.borderStyle = .bezel
+        field.borderStyle = .roundedRect
         return field
     }()
     
@@ -27,7 +27,7 @@ class LoginViewController: BaseViewController {
         field.placeholder = "password"
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
-        field.borderStyle = .bezel
+        field.borderStyle = .roundedRect
         return field
     }()
     
@@ -38,21 +38,17 @@ class LoginViewController: BaseViewController {
         return btn
     }()
     
-    private lazy var viewModel: LoginViewModel = {
-        return LoginViewModel(disposeBag: rx.disposeBag)
-    }()
+    var viewModel: LoginViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func addSubviews() {
+    override func makeUI() {
+        super.makeUI()
         view.addSubview(username)
         view.addSubview(password)
         view.addSubview(loginBtn)
-    }
-
-    override func addConstrants() {
         username.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(100)
@@ -69,20 +65,33 @@ class LoginViewController: BaseViewController {
             make.left.right.height.equalTo(username)
         }
     }
+
+    override func updateUI() {
+        
+    }
     
     override func bindViewModel() {
-        username.rx.text.orEmpty.bind(to: viewModel.input.username).disposed(by: rx.disposeBag)
-        password.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: rx.disposeBag)
-        loginBtn.rx.bind(to: viewModel.input.loginAction, input: ())
         
-        viewModel.loginBtnEnabled.bind(to: loginBtn.rx.isEnabled).disposed(by: rx.disposeBag)
-        viewModel.loginStatus.subscribe(onNext: { (status) in
-            switch status {
-            case .idle: break
-            case .fetchingToken: break
-            case .failed: break
-            case .success: break
-            }
+        let input = LoginViewModel.Input(username: username.rx.text.orEmpty,
+                                         password: password.rx.text.orEmpty,
+                                         loginAction: loginBtn.rx.tap)
+        
+        let out = viewModel.transform(input: input)
+        out.loginBtnEnabled.drive(loginBtn.rx.isEnabled).disposed(by: rx.disposeBag)
+        
+        viewModel.loading.asDriver()
+            .drive(onNext: { [weak self] (loading) in
+                loading ? self?.startAnimating() : self?.stopAnimating()
+            }).disposed(by: rx.disposeBag)
+        
+        loginBtn.rx.tap.asObservable()
+            .subscribe(onNext: { [weak self] () in
+                self?.view.endEditing(true)
+            }).disposed(by: rx.disposeBag)
+        
+        viewModel.error.asDriver().drive(onNext: { (error) in
+            
+            print(error.localizedDescription)
         }).disposed(by: rx.disposeBag)
     }
 }

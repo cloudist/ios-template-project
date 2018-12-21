@@ -16,13 +16,13 @@ enum Account {
 
 extension Account: TargetType {
     var baseURL: URL {
-        return NetworkConfig.default.baseURL
+        return NetworkingConstant.baseURL
     }
     
     var path: String {
         switch self {
         case .login:
-            return ""
+            return "/api/auth/tokens/"
         case .userInfo(let id):
             return "/api/user/\(id)"
         }

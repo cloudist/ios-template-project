@@ -33,7 +33,7 @@ target 'ios-template-project' do
   pod 'MBProgressHUD'
   pod 'FSPagerView'
   pod 'NVActivityIndicatorView'
-  # pod 'DZNEmptyDataSet'
+  pod 'DZNEmptyDataSet'
   # pod 'Texture'
   # pod 'MGSwipeTableCell'
 
@@ -50,6 +50,12 @@ target 'ios-template-project' do
   pod 'FDFullscreenPopGesture'
   pod 'R.swift', '~> 5.0.0.alpha.3'
   pod 'SwiftLint'
+  
+  pod 'Hero'
+  pod 'SwifterSwift'
+  pod 'IQKeyboardManagerSwift'
+  pod 'ReachabilitySwift'
+  pod 'Bugly'
 
   # Pods for ios-template-project
 

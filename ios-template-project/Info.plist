@@ -6,8 +6,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
@@ -56,5 +54,7 @@
 	<string>$(BUGLY_APP_ID)</string>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
+	<key>ENABLE_NETWORK_LOGGING</key>
+	<string>$(ENABLE_NETWORK_LOGGING)</string>
 </dict>
 </plist>

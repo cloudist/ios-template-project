@@ -43,4 +43,8 @@ file_length:
 vertical_whitespace:
   max_empty_lines: 2
 
+cyclomatic_complexity:
+  warning: 20
+  error: 30
+
 reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)

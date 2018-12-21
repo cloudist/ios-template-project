@@ -16,9 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let login = LoginViewController()
-        window?.rootViewController = login
-        window?.makeKeyAndVisible()
+        
+        window?.backgroundColor = .white
+        LibsManager.shared.setupLibs(with: window)
+        
+//        AuthManager.removeToken()
+        
+        Application.shared.presentInitialScreen(in: window!)
+        
         return true
     }
 

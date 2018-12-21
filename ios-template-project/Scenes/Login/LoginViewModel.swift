@@ -9,70 +9,47 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Action
 
-protocol LoginViewModelInputType {
-    var username: BehaviorRelay<String> { get }
-    var password: BehaviorRelay<String> { get }
-    var loginAction: Action<Void, LoginResponse> { get }
-}
-
-enum LoginStatus {
-    case idle
-    case fetchingToken
-    case success
-    case failed
-}
-
-protocol LoginViewModelOutputType {
-    var loginBtnEnabled: Observable<Bool> { get }
-    var loginStatus: BehaviorSubject<LoginStatus> { get }
-}
-
-protocol LoginViewModelType {
-    var input: LoginViewModelInputType { get }
-    var output: LoginViewModelOutputType { get }
-}
-
-class LoginViewModel: LoginViewModelType, LoginViewModelInputType, LoginViewModelOutputType {
-    var loginStatus: BehaviorSubject<LoginStatus>
-    var loginBtnEnabled: Observable<Bool>
+class LoginViewModel: ViewModel, ViewModelType {
+    var disposeBag = DisposeBag()
     
-    var disposeBag: DisposeBag
-    var username: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
-    var password: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    struct Input {
+        var username: ControlProperty<String>
+        var password: ControlProperty<String>
+        var loginAction: ControlEvent<Void>
+    }
     
-    lazy var loginAction: Action<Void, LoginResponse> = {
-        return Action { [unowned self] _ in
-            return DataRepository.shared.login(username: self.username.value, password: self.password.value)
-        }
-    }()
+    struct Output {
+        var loginBtnEnabled: Driver<Bool>
+    }
     
-    var input: LoginViewModelInputType { return self }
-    var output: LoginViewModelOutputType { return self }
-    
-    init(disposeBag: DisposeBag) {
-        self.disposeBag = disposeBag
+    func transform(input: LoginViewModel.Input) -> LoginViewModel.Output {
         
-        self.loginBtnEnabled = Observable<Bool>.combineLatest(username.asObservable(), password.asObservable()) { $0.count >= 6 && !$1.isEmpty }.startWith(false)
-        
-        self.loginStatus = BehaviorSubject<LoginStatus>.init(value: .idle)
-        
-        self.loginAction.errors
-            .subscribe(onNext: { [unowned self] (error) in
-                self.loginStatus.onNext(.failed)
+        let usernamePassword = Observable.combineLatest(input.username, input.password) { ($0, $1) }
+
+        input.loginAction
+            .debug("loginAction", trimOutput: false)
+            .withLatestFrom(usernamePassword)
+            .debug("withLatestFrom", trimOutput: false)
+            .flatMapLatest { (tuple) in
+                self.dataRepository.login(username: tuple.0, password: tuple.1)
+                    .trackError(self.error)
+                    .trackActivity(self.loading)
+                    .catchErrorJustComplete()
+            }
+            .subscribe(onNext: { (loginResponse) in
+                AuthManager.setToken(token: Token(basicToken: loginResponse.token, isValid: true))
+                loginResponse.user.save()
+            }, onError: { (error) in
+                
             }).disposed(by: disposeBag)
         
-        self.loginAction.elements
-            .subscribe(onNext: { [unowned self] (loginResponse) in
-                UserManager.shared.token = loginResponse.token
-                UserManager.shared.user = loginResponse.user
-                self.loginStatus.onNext(.success)
-            }).disposed(by: disposeBag)
-        
-        self.loginAction.executing
-            .subscribe(onNext: { [unowned self] (executing) in
-                self.loginStatus.onNext(executing ? .fetchingToken : .idle)
-            }).disposed(by: disposeBag)
+        let loginBtnEnable = Observable
+            .combineLatest(input.username, input.password) {
+                $0.count >= 1 && $1.count >= 1
+            }
+            .startWith(false)
+            .asDriver(onErrorJustReturn: false)
+        return Output(loginBtnEnabled: loginBtnEnable)
     }
 }

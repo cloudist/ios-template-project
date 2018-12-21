@@ -1,13 +1,13 @@
 //
-//  User.swift
+//  SampleViewModel.swift
 //  ios-template-project
 //
-//  Created by 刘波 on 2018/12/11.
+//  Created by 刘波 on 2018/12/21.
 //  Copyright © 2018 cloudist. All rights reserved.
 //
 
 import Foundation
 
-struct User: Codable {
-    let id: Int
+class SampleViewModel: ViewModel {
+    
 }

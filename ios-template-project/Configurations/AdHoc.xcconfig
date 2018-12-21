@@ -11,3 +11,4 @@
 
 BUGLY_APP_ID = q12a34b
 BASE_URL = https:/$()/www.example.com
+ENABLE_NETWORK_LOGGING = NO
