@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 import IQKeyboardManagerSwift
 import SDWebImage
 import CocoaLumberjack
@@ -19,16 +18,9 @@ class LibsManager {
     func setupLibs(with window: UIWindow? = nil) {
         let libsManager = LibsManager.shared
         libsManager.setupCocoaLumberjack()
-        libsManager.setupSDWebImage()
-        libsManager.setupActivityView()
+        libsManager.setupSDWebImage()        
         libsManager.setupKeyboardManager()
         libsManager.setupBugly()
-    }
-    
-    func setupActivityView()  {
-        NVActivityIndicatorView.DEFAULT_TYPE = .ballRotateChase
-        #warning("replace with your color")
-        NVActivityIndicatorView.DEFAULT_COLOR = UIColor.red
     }
     
     func setupKeyboardManager() {

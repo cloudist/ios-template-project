@@ -71,11 +71,8 @@ class HomeTabBarController: UITabBarController, Navigatable {
     }
     
     func makeupUI() {
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         hero.isEnabled = true
-        hero.tabBarAnimationType = .auto
-        
-        tabBar.layer.removeAllAnimations()
     }
 
     func bindViewModel() {

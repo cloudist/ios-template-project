@@ -27,8 +27,8 @@ class ProfileViewController: ViewController {
                 guard let self = self else { return }
                 let viewModel = LoginViewModel(dataRepository: self.viewModel.dataRepository)
                 self.navigator.show(segue: .login(viewModel: viewModel),
-                           sender: self,
-                           transition: .navigation(type: .push(direction: .left)))
+                                    sender: self)
+                
             })
             .disposed(by: rx.disposeBag)
         

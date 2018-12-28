@@ -32,7 +32,7 @@ target 'ios-template-project' do
   pod 'RxMJ'
   pod 'MBProgressHUD'
   pod 'FSPagerView'
-  pod 'NVActivityIndicatorView'
+  
   pod 'DZNEmptyDataSet'
   # pod 'Texture'
   # pod 'MGSwipeTableCell'

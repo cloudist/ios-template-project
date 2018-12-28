@@ -9,11 +9,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import NVActivityIndicatorView
 import DZNEmptyDataSet
 import Hero
 
-class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable {
+class ViewController: UIViewController, Navigatable {
     var navigator: Navigator!
     
     let isLoading = BehaviorRelay(value: false)
@@ -25,11 +24,10 @@ class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable
             navigationItem.title = navigationTitle
         }
     }
-    #warning("replace image")
-    var emptyDataSetTitle = ""
-    var emptyDataSetImage = UIImage()
-    var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
+    var emptyDataSetTitle = "v暂无内容"
+    var emptyDataSetImage = R.image.empty_content()
+    var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
     lazy var backBarButton: BarButtonItem = {
         let view = BarButtonItem()
@@ -38,8 +36,7 @@ class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable
     }()
     
     lazy var closeBarButton: BarButtonItem = {
-        #warning("replace image")
-        let view = BarButtonItem(image: UIImage(),
+        let view = BarButtonItem(image: R.image.cancel(),
                                  style: .plain,
                                  target: self,
                                  action: nil)
@@ -148,7 +145,6 @@ class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable
 
 extension ViewController {
     var inset: CGFloat {
-        #warning("")
         return 10
     }
     

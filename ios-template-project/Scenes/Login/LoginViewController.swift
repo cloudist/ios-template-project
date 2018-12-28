@@ -28,6 +28,7 @@ class LoginViewController: ViewController {
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
         field.borderStyle = .roundedRect
+        field.isSecureTextEntry = true
         return field
     }()
     
@@ -78,20 +79,18 @@ class LoginViewController: ViewController {
         
         let out = viewModel.transform(input: input)
         out.loginBtnEnabled.drive(loginBtn.rx.isEnabled).disposed(by: rx.disposeBag)
+
+        viewModel.loading.skip(1).asDriver().drive(rx.loading).disposed(by: rx.disposeBag)
         
-        viewModel.loading.asDriver()
-            .drive(onNext: { [weak self] (loading) in
-                loading ? self?.startAnimating() : self?.stopAnimating()
-            }).disposed(by: rx.disposeBag)
-        
-        loginBtn.rx.tap.asObservable()
+        loginBtn.rx.tap
+            .asObservable()
             .subscribe(onNext: { [weak self] () in
                 self?.view.endEditing(true)
             }).disposed(by: rx.disposeBag)
         
-        viewModel.error.asDriver().drive(onNext: { (error) in
-            
-            print(error.localizedDescription)
-        }).disposed(by: rx.disposeBag)
+        viewModel.error
+            .map { $0.resolve() }
+            .drive(rx.showError)
+            .disposed(by: rx.disposeBag)
     }
 }

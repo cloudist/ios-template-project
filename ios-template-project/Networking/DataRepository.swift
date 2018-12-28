@@ -13,7 +13,7 @@ import RxSwift
 class DataRepository {
     static let shared = DataRepository()
     
-    private lazy var apiService: OnlineProvider<MultiTarget> = {
+    private lazy var apiService: MoyaProvider<MultiTarget> = {
        return NetworkConfig.provider()
     }()
     
@@ -22,8 +22,7 @@ class DataRepository {
 
 extension DataRepository {
     func login(username: String, password: String) -> Observable<LoginResponse> {
-        return apiService
-            .request(Account.login(param: ["userIdentity": username, "password": password]).asMultiTarget)
+        return apiService.request(Account.login(param: ["userIdentity": username, "password": password]).asMultiTarget)
             .map(LoginResponse.self)
     }
 }

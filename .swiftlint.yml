@@ -4,6 +4,7 @@ disabled_rules: # 执行时排除掉的规则
   - line_length
   - identifier_name
   - large_tuple
+  - function_body_length
 opt_in_rules: # 一些规则仅仅是可选的
   - empty_count
   - array_init

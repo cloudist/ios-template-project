@@ -20,12 +20,10 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         
         hero.isEnabled = true
-        hero.modalAnimationType = .autoReverse(presenting: .fade)
-        hero.navigationAnimationType = .autoReverse(presenting: .slide(direction: .left))
+//        hero.modalAnimationType = .autoReverse(presenting: .fade)
         
-        navigationBar.isTranslucent = false
-        #warning("replace with your image")
-//        navigationBar.backIndicatorImage = UIImage()
-//        navigationBar.backIndicatorTransitionMaskImage = UIImage()
+//        #warning("replace with your image")
+        navigationBar.backIndicatorImage = R.image.back()
+        navigationBar.backIndicatorTransitionMaskImage = R.image.back()
     }
 }

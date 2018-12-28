@@ -13,12 +13,12 @@ import RxSwift
 
 struct NetworkingConstant {
     static let baseURL: URL = URL(string: ConfigItems.baseURL)!
-    static let timeoutInterval: TimeInterval = 60
+    static let timeoutInterval: TimeInterval = 15
     static let contentType: String = "application/json"
 }
 
 public struct NetworkConfig {
-    static func provider() -> OnlineProvider<MultiTarget> {
+    static func provider() -> MoyaProvider<MultiTarget> {
         let endPointClosure = { (target: TargetType) -> Endpoint in
             let url = target.baseURL.absoluteString + target.path
             let endpoint = Endpoint(url: url,
@@ -60,14 +60,54 @@ public struct NetworkConfig {
             return [logger, authorization]
         }()
     
-        return OnlineProvider(endpointClosure: endPointClosure,
-                              requestClosure: requestClosure,
-                              manager: manager,
-                              plugins: plugins,
-                              online: connectedToInternet)
+        return MoyaProvider(endpointClosure: endPointClosure,
+                            requestClosure: requestClosure,
+                            manager: manager,
+                            plugins: plugins)
     }
 
-    static func stubbingProvider() -> OnlineProvider<MultiTarget> {
-        return OnlineProvider(stubClosure: { _ in .immediate }, online: .just(true))
+    static func stubbingProvider() -> MoyaProvider<MultiTarget> {
+        return MoyaProvider(stubClosure: { _ in .immediate })
+    }
+}
+
+func stubbedResponse(_ filename: String) -> Data! {
+    let path = Bundle.main.path(forResource: filename, ofType: "json")!
+    return try? Data(contentsOf: URL(fileURLWithPath: path))
+}
+
+extension TargetType {
+    var asMultiTarget: MultiTarget {
+        return .target(self)
+    }
+}
+
+extension MoyaProvider {
+    func request(_ token: Target) -> Observable<Response> {
+        return rx.request(token)
+            .asObservable()
+            .filterSuccessfulStatusAndRedirectCodes()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+            .observeOn(MainScheduler.instance)
+            .do(onError: { (error) in
+                if let e = error as? MoyaError,
+                    case let .statusCode(response) = e,
+                    response.statusCode == 401 {
+                    AuthManager.removeToken()
+                }
+            })
+    }
+    
+    func requestWithProgress(_ token: Target) -> Observable<ProgressResponse> {
+        return rx.requestWithProgress(token)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+            .observeOn(MainScheduler.instance)
+            .do(onError: { (error) in
+                if let e = error as? MoyaError,
+                    case let .statusCode(response) = e,
+                    response.statusCode == 401 {
+                    AuthManager.removeToken()
+                }
+            })
     }
 }

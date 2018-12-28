@@ -28,9 +28,7 @@ class LoginViewModel: ViewModel, ViewModelType {
         let usernamePassword = Observable.combineLatest(input.username, input.password) { ($0, $1) }
 
         input.loginAction
-            .debug("loginAction", trimOutput: false)
             .withLatestFrom(usernamePassword)
-            .debug("withLatestFrom", trimOutput: false)
             .flatMapLatest { (tuple) in
                 self.dataRepository.login(username: tuple.0, password: tuple.1)
                     .trackError(self.error)
@@ -40,8 +38,6 @@ class LoginViewModel: ViewModel, ViewModelType {
             .subscribe(onNext: { (loginResponse) in
                 AuthManager.setToken(token: Token(basicToken: loginResponse.token, isValid: true))
                 loginResponse.user.save()
-            }, onError: { (error) in
-                
             }).disposed(by: disposeBag)
         
         let loginBtnEnable = Observable

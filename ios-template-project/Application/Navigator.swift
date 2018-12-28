@@ -105,20 +105,20 @@ class Navigator {
         
         switch transition {
         case .navigation(type: let type):
-            if let nav = sender.navigationController {
-                //add controller to navigation stack
-                nav.hero.navigationAnimationType = .autoReverse(presenting: type)
-                nav.pushViewController(target, animated: true)
+            guard let nav = sender.navigationController else {
+                assertionFailure("\(sender) has no navigationController")
+                return
             }
+            target.hidesBottomBarWhenPushed = true
+            nav.hero.navigationAnimationType = .autoReverse(presenting: type)
+            nav.pushViewController(target, animated: true)
         case .customModal(type: let type):
-            //present modally with custom animation
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
                 nav.hero.modalAnimationType = .autoReverse(presenting: type)
                 sender.present(nav, animated: true, completion: nil)
             }
         case .modal:
-            //present modally
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
                 sender.present(nav, animated: true, completion: nil)
