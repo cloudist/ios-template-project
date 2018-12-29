@@ -19,44 +19,56 @@ target 'ios-template-project' do
   pod 'Action'
   pod 'NSObject+Rx'
 
-  # network 
+  # Networking
   pod 'Alamofire'
   pod 'Moya/RxSwift'
-  pod 'SDWebImage'
+  pod 'ReachabilitySwift'
   # pod 'RxStarscream'
   # pod 'Starscream'
+  
+  # Image
+  pod 'SDWebImage'
+  
+  # Date
+  pod 'SwiftDate'
+  
+  # Keyboard
+  pod 'IQKeyboardManagerSwift'
+  
+  # Auto Layout
+  pod 'SnapKit'
 
-  # interface
+  # UI
+  pod 'Hero'
   pod 'UITextView+Placeholder'
   pod 'MJRefresh'
   pod 'RxMJ'
   pod 'MBProgressHUD'
   pod 'FSPagerView'
-  
   pod 'DZNEmptyDataSet'
+  pod 'FDFullscreenPopGesture'
+  pod 'Localize-Swift'
   # pod 'Texture'
   # pod 'MGSwipeTableCell'
 
-  # storage
+  # Storage
   pod 'KeychainAccess'
   pod 'Cache'
+  
+  # Logging
+  pod 'CocoaLumberjack/Swift'
 
   # utils
-  pod 'SnapKit'
-  pod 'SwiftDate'
   pod 'Device'
   pod 'UIFontComplete'
-  pod 'CocoaLumberjack/Swift'
-  pod 'FDFullscreenPopGesture'
+  pod 'SwifterSwift'
+  
+  # Tools
   pod 'R.swift', '~> 5.0.0.alpha.3'
   pod 'SwiftLint'
-  
-  pod 'Hero'
-  pod 'SwifterSwift'
-  pod 'IQKeyboardManagerSwift'
-  pod 'ReachabilitySwift'
   pod 'Bugly'
-
+  
+  
   # Pods for ios-template-project
 
   target 'ios-template-projectTests' do

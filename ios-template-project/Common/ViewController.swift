@@ -25,46 +25,15 @@ class ViewController: UIViewController, Navigatable {
         }
     }
     
-    var emptyDataSetTitle = "v暂无内容"
+    var emptyDataSetTitle = R.string.localizable.commonNoContent.key.localized()
     var emptyDataSetImage = R.image.empty_content()
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
-    
-    lazy var backBarButton: BarButtonItem = {
-        let view = BarButtonItem()
-        view.title = ""
-        return view
-    }()
     
     lazy var closeBarButton: BarButtonItem = {
         let view = BarButtonItem(image: R.image.cancel(),
                                  style: .plain,
                                  target: self,
                                  action: nil)
-        return view
-    }()
-    
-    lazy var contentView: View = {
-        let view = View()
-        self.view.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            if #available(iOS 11.0, *) {
-                make.edges.equalTo(self.view.safeAreaLayoutGuide)
-            } else {
-                make.left.right.equalToSuperview()
-                make.top.equalTo(self.topLayoutGuide.snp.bottom)
-                make.bottom.equalTo(self.bottomLayoutGuide.snp.top)
-            }
-        }
-        return view
-    }()
-    
-    lazy var stackView: StackView = {
-        let subviews: [UIView] = []
-        let view = StackView(arrangedSubviews: subviews)
-        self.contentView.addSubview(view)
-        view.snp.makeConstraints({ (make) in
-            make.edges.equalToSuperview()
-        })
         return view
     }()
     
@@ -106,7 +75,6 @@ class ViewController: UIViewController, Navigatable {
     func makeUI() {
         view.backgroundColor = .white
         hero.isEnabled = true
-        navigationItem.backBarButtonItem = backBarButton
     }
     
     func bindViewModel() {

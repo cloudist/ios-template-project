@@ -15,7 +15,7 @@ class LoginViewController: ViewController {
     
     lazy var username: UITextField = {
         let field = UITextField()
-        field.placeholder = "username"
+        field.placeholder = R.string.localizable.loginUsername.key.localized()
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
         field.borderStyle = .roundedRect
@@ -24,7 +24,7 @@ class LoginViewController: ViewController {
     
     lazy var password: UITextField = {
         let field = UITextField()
-        field.placeholder = "password"
+        field.placeholder = R.string.localizable.loginPassword.key.localized()
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
         field.borderStyle = .roundedRect
@@ -34,7 +34,8 @@ class LoginViewController: ViewController {
     
     lazy var loginBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("登录", for: .normal)
+        btn.setTitle(R.string.localizable.loginLoginBtnTitle.key.localized(),
+                     for: .normal)
         btn.backgroundColor = .blue
         return btn
     }()

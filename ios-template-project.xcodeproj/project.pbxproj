@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A14948D21D6122100F83C4E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A14948F21D6122100F83C4E /* Localizable.strings */; };
 		3A28867021D1D54000AABF47 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28866F21D1D54000AABF47 /* StringExtensions.swift */; };
 		3A28869221D380E800AABF47 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28869121D380E800AABF47 /* ErrorResponse.swift */; };
 		3A54F38321B8F7B9003D79E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F38221B8F7B9003D79E1 /* AppDelegate.swift */; };
@@ -19,6 +20,8 @@
 		3A54F3C321BA5CD1003D79E1 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3C221BA5CD1003D79E1 /* ViewControllerSpec.swift */; };
 		3A62EE2821C77C29005451F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62EE2721C77C29005451F1 /* LoginViewController.swift */; };
 		3A62EE2A21C78568005451F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62EE2921C78568005451F1 /* LoginViewModel.swift */; };
+		3ABA0D3C21D713F7000B5180 /* Scence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0D3B21D713F7000B5180 /* Scence.swift */; };
+		3ABA0D3E21D71424000B5180 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0D3D21D71424000B5180 /* Transition.swift */; };
 		3AC70C7B21C8FA260010B72C /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7A21C8FA260010B72C /* LoginResponse.swift */; };
 		3AC70C7D21C9E4C90010B72C /* ErrorResolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7C21C9E4C90010B72C /* ErrorResolvable.swift */; };
 		3AC70C8021CA327C0010B72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7F21CA327C0010B72C /* ViewController.swift */; };
@@ -78,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		0E18F9B06D5E88ECDAA45C49 /* Pods-ios-template-projectTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-template-projectTests.adhoc.xcconfig"; path = "Target Support Files/Pods-ios-template-projectTests/Pods-ios-template-projectTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		3A14948E21D6122100F83C4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A14949021D6122500F83C4E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3A28866F21D1D54000AABF47 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		3A28869121D380E800AABF47 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		3A32F4A021D3902500DF5591 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -98,6 +103,8 @@
 		3A54F3C221BA5CD1003D79E1 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		3A62EE2721C77C29005451F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A62EE2921C78568005451F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3ABA0D3B21D713F7000B5180 /* Scence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scence.swift; sourceTree = "<group>"; };
+		3ABA0D3D21D71424000B5180 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		3AC70C7A21C8FA260010B72C /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3AC70C7C21C9E4C90010B72C /* ErrorResolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResolvable.swift; sourceTree = "<group>"; };
 		3AC70C7F21CA327C0010B72C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +256,7 @@
 				3AC70CA921CB8EED0010B72C /* Vender */,
 				3A54F38621B8F7B9003D79E1 /* Main.storyboard */,
 				3A54F38921B8F7BA003D79E1 /* Assets.xcassets */,
+				3A14948F21D6122100F83C4E /* Localizable.strings */,
 				3A54F38B21B8F7BA003D79E1 /* LaunchScreen.storyboard */,
 				3A54F38E21B8F7BA003D79E1 /* Info.plist */,
 			);
@@ -296,6 +304,16 @@
 				3A62EE2921C78568005451F1 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3ABA0D3A21D713E4000B5180 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				3AC70C8421CA337F0010B72C /* Navigator.swift */,
+				3ABA0D3B21D713F7000B5180 /* Scence.swift */,
+				3ABA0D3D21D71424000B5180 /* Transition.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		3AC70C7E21C9E6490010B72C /* ErrorResolve */ = {
@@ -393,7 +411,7 @@
 				3A54F38221B8F7B9003D79E1 /* AppDelegate.swift */,
 				3AF020C521BF613A008A2DFF /* AppDelegate+PushNotification.swift */,
 				3AC70C8F21CA49560010B72C /* Application.swift */,
-				3AC70C8421CA337F0010B72C /* Navigator.swift */,
+				3ABA0D3A21D713E4000B5180 /* Navigator */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -553,6 +571,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 3A54F37621B8F7B9003D79E1;
 			productRefGroup = 3A54F38021B8F7B9003D79E1 /* Products */;
@@ -571,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A14948D21D6122100F83C4E /* Localizable.strings in Resources */,
 				3A54F38D21B8F7BA003D79E1 /* LaunchScreen.storyboard in Resources */,
 				3A54F38A21B8F7BA003D79E1 /* Assets.xcassets in Resources */,
 				3A54F38821B8F7B9003D79E1 /* Main.storyboard in Resources */,
@@ -744,6 +764,7 @@
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -781,6 +802,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -836,6 +858,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABA0D3E21D71424000B5180 /* Transition.swift in Sources */,
 				3A28869221D380E800AABF47 /* ErrorResponse.swift in Sources */,
 				3AC70C7B21C8FA260010B72C /* LoginResponse.swift in Sources */,
 				3AC70CB721CC7D6F0010B72C /* SampleViewModel.swift in Sources */,
@@ -871,6 +894,7 @@
 				3AC70C9421CA4B350010B72C /* Token.swift in Sources */,
 				3AF020C621BF613A008A2DFF /* AppDelegate+PushNotification.swift in Sources */,
 				3AF0210221BF9CC5008A2DFF /* CustomFont.swift in Sources */,
+				3ABA0D3C21D713F7000B5180 /* Scence.swift in Sources */,
 				3AC70CAF21CB8F6A0010B72C /* RxErrorTracker.swift in Sources */,
 				3AC70C9221CA49D30010B72C /* AuthManager.swift in Sources */,
 				3AC70CF921CCB4E70010B72C /* HomeTabBarViewModel.swift in Sources */,
@@ -912,6 +936,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3A14948F21D6122100F83C4E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A14948E21D6122100F83C4E /* en */,
+				3A14949021D6122500F83C4E /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3A54F38621B8F7B9003D79E1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  ios-template-project
+
+  Created by 刘波 on 2018/12/28.
+  Copyright © 2018 cloudist. All rights reserved.
+*/
+/* Common */
+"Common.NoContent" = "暂无内容";
+
+/* Login */
+"Login.username" = "用户名";
+"Login.password" = "密码";
+"Login.loginBtnTitle" = "登录";

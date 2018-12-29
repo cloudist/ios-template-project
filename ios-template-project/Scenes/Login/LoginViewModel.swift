@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxSwiftExt
 
 class LoginViewModel: ViewModel, ViewModelType {
-    var disposeBag = DisposeBag()
     
     struct Input {
         var username: ControlProperty<String>

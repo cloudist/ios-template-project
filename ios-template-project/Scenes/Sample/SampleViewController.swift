@@ -9,17 +9,40 @@
 import UIKit
 import RxViewController
 import RxSwift
+import RxDataSources
 
-class SampleViewController: ViewController {
+class SampleViewController: TableViewController {
 
     var viewModel: SampleViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+    }
+    
+    override func makeUI() {
+        super.makeUI()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     override func bindViewModel() {
         super.bindViewModel()
+        
+        tableView.mj_header.rx.refreshing
+            .bind(to: viewModel.headerRefreshTrigger)
+            .disposed(by: rx.disposeBag)
+        tableView.mj_footer.rx.refreshing
+            .bind(to: viewModel.footerRefreshTrigger)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.headerLoading
+            .drive(tableView.mj_header.rx.isRefreshing)
+            .disposed(by: rx.disposeBag)
+        viewModel.footerState
+            .bind(to: tableView.mj_footer.rx.refreshFooterState)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.tableData.bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, ele, cell in
+            cell.textLabel?.text = ele
+        }.disposed(by: rx.disposeBag)
     }
 }
