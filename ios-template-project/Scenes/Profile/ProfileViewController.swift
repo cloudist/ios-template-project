@@ -26,12 +26,9 @@ class ProfileViewController: ViewController {
             .subscribe(onNext: { [weak self] (_) in
                 guard let self = self else { return }
                 let viewModel = LoginViewModel(dataRepository: self.viewModel.dataRepository)
-//                self.navigator.show(segue: .login(viewModel: viewModel),
-//                                    sender: self)
-                self.navigator.show(segue: .login(viewModel: viewModel), sender: self, transition: Navigator.Transition.modal)
+                self.navigator.show(segue: .login(viewModel: viewModel), sender: self)
             })
             .disposed(by: rx.disposeBag)
-        
     }
     
     override func didReceiveMemoryWarning() {

@@ -17,11 +17,10 @@ extension Navigator {
         case customModal(type: HeroDefaultAnimationType)
         case modal
         case detail
-        case alert
         case custom
     }
     
-    func show(segue: Scence, sender: UIViewController?, transition: Transition = .navigation(type: .cover(direction: .left))) {
+    func show(segue: Scence, sender: UIViewController?, transition: Transition = .navigation(type: .push(direction: .left))) {
         guard let target = get(segue: segue) else { return }
         show(target: target, sender: sender, transition: transition)
     }
@@ -66,16 +65,13 @@ extension Navigator {
         case .modal:
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
+                 nav.hero.modalAnimationType = .autoReverse(presenting: .cover(direction:.up))
                 sender.present(nav, animated: true, completion: nil)
             }
         case .detail:
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
                 sender.showDetailViewController(nav, sender: nil)
-            }
-        case .alert:
-            DispatchQueue.main.async {
-                sender.present(target, animated: true, completion: nil)
             }
         default: break
         }
