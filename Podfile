@@ -46,7 +46,6 @@ target 'ios-template-project' do
   pod 'MBProgressHUD'
   pod 'FSPagerView'
   pod 'DZNEmptyDataSet'
-  pod 'FDFullscreenPopGesture'
   pod 'Localize-Swift'
   # pod 'Texture'
   # pod 'MGSwipeTableCell'
@@ -64,7 +63,7 @@ target 'ios-template-project' do
   pod 'SwifterSwift'
   
   # Tools
-  pod 'R.swift', '~> 5.0.0.alpha.3'
+  pod 'R.swift'
   pod 'SwiftLint'
   pod 'Bugly'
   

@@ -20,8 +20,7 @@ struct User: Codable {
 extension User {
     static func currentUser() -> User? {
         if let jsonData = try? Keychain().getData(userkey),
-            let data = jsonData,
-            let user = try? JSONDecoder().decode(User.self, from: data) {
+            let user = try? JSONDecoder().decode(User.self, from: jsonData) {
             return user
         }
         return nil

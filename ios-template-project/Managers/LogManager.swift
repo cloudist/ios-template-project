@@ -11,26 +11,26 @@ import CocoaLumberjack
 import Bugly
 
 public func logDebug(_ message: @autoclosure () -> String) {
-    DDLogDebug(message)
+    DDLogDebug(message())
     BuglyLog.level(.debug, logs: message())
 }
 
 public func logError(_ message: @autoclosure () -> String) {
-    DDLogError(message)
+    DDLogError(message())
     BuglyLog.level(.error, logs: message())
 }
 
 public func logInfo(_ message: @autoclosure () -> String) {
-    DDLogInfo(message)
+    DDLogInfo(message())
     BuglyLog.level(.info, logs: message())
 }
 
 public func logVerbose(_ message: @autoclosure () -> String) {
-    DDLogVerbose(message)
+    DDLogVerbose(message())
     BuglyLog.level(.verbose, logs: message())
 }
 
 public func logWarn(_ message: @autoclosure () -> String) {
-    DDLogWarn(message)
+    DDLogWarn(message())
     BuglyLog.level(.warn, logs: message())
 }

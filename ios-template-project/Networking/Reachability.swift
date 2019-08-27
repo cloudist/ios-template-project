@@ -41,7 +41,7 @@ class ReachabilityManager {
         
         do {
             try reachability?.startNotifier()
-            _reach.onNext(reachability?.connection != .none)
+            _reach.onNext(reachability?.connection != Reachability.Connection.none)
         } catch {
             logError("Unable to start notifier")
         }

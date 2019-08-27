@@ -20,8 +20,8 @@ class AuthManager {
     
     var token: Token? {
         get {
-            guard let jsonData = try? keychain.getData(tokenKey), let data = jsonData else { return nil }
-            return try? JSONDecoder().decode(Token.self, from: data)
+            guard let jsonData = try? keychain.getData(tokenKey) else { return nil }
+            return try? JSONDecoder().decode(Token.self, from: jsonData)
         }
         
         set {

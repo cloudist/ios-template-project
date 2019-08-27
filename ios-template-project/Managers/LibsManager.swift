@@ -28,7 +28,7 @@ class LibsManager {
     }
     
     func setupSDWebImage() {
-        SDWebImageDownloader.shared().downloadTimeout = 15
+        SDWebImageDownloader.shared.config.downloadTimeout = 15
     }
     
     func setupCocoaLumberjack() {
