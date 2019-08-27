@@ -1,5 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.3'
+install! 'cocoapods', 
+          :generate_multiple_pod_projects => true, 
+          :incremental_installation => true,
+          :deduplicate_targets => true
 
 def test_pods
   pod 'Quick'
