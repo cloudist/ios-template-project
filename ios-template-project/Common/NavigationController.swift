@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hero
 
 class NavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -19,8 +18,6 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hero.isEnabled = true
 
         navigationBar.backIndicatorImage = R.image.back()
         navigationBar.backIndicatorTransitionMaskImage = R.image.back()

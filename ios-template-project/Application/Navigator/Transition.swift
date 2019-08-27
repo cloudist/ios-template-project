@@ -8,19 +8,18 @@
 
 import Foundation
 import UIKit
-import Hero
 
 extension Navigator {
     enum Transition {
         case root(in: UIWindow)
-        case navigation(type: HeroDefaultAnimationType)
-        case customModal(type: HeroDefaultAnimationType)
+        case navigation
+        case customModal
         case modal
         case detail
         case custom
     }
     
-    func show(segue: Scence, sender: UIViewController?, transition: Transition = .navigation(type: .push(direction: .left))) {
+    func show(segue: Scence, sender: UIViewController?, transition: Transition = .navigation) {
         guard let target = get(segue: segue) else { return }
         show(target: target, sender: sender, transition: transition)
     }
@@ -48,24 +47,21 @@ extension Navigator {
         }
         
         switch transition {
-        case .navigation(type: let type):
+        case .navigation:
             guard let nav = sender.navigationController else {
                 assertionFailure("\(sender) has no navigationController")
                 return
             }
             target.hidesBottomBarWhenPushed = true
-            nav.hero.navigationAnimationType = .autoReverse(presenting: type)
             nav.pushViewController(target, animated: true)
-        case .customModal(type: let type):
+        case .customModal:
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
-                nav.hero.modalAnimationType = .autoReverse(presenting: type)
                 sender.present(nav, animated: true, completion: nil)
             }
         case .modal:
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
-                 nav.hero.modalAnimationType = .autoReverse(presenting: .cover(direction:.up))
                 sender.present(nav, animated: true, completion: nil)
             }
         case .detail:

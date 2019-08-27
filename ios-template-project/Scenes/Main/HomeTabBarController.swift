@@ -8,7 +8,6 @@
 
 import UIKit
 import RxViewController
-import Hero
 
 extension TabbarItem {
     var title: String {
@@ -72,7 +71,6 @@ class HomeTabBarController: UITabBarController, Navigatable {
     
     func makeupUI() {
         view.backgroundColor = .white
-        hero.isEnabled = true
     }
 
     func bindViewModel() {

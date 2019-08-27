@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import DZNEmptyDataSet
-import Hero
 
 class ViewController: UIViewController, Navigatable {
     var navigator: Navigator!
@@ -74,7 +73,6 @@ class ViewController: UIViewController, Navigatable {
     
     func makeUI() {
         view.backgroundColor = .white
-        hero.isEnabled = true
     }
     
     func bindViewModel() {

@@ -243,17 +243,17 @@
 		3A54F38121B8F7B9003D79E1 /* ios-template-project */ = {
 			isa = PBXGroup;
 			children = (
-				3AC70C8C21CA46070010B72C /* Managers */,
-				3A62EE1F21C7759B005451F1 /* Common */,
 				3AF020C421BF610F008A2DFF /* Application */,
-				3AF0210621BFAA37008A2DFF /* Scenes */,
-				3AF0210821BFAD5E008A2DFF /* Networking */,
-				3AF0210721BFAD4D008A2DFF /* Model */,
-				3AF020C721BF80E5008A2DFF /* Utils */,
+				3A62EE1F21C7759B005451F1 /* Common */,
 				3AF020C321BF60CE008A2DFF /* Configurations */,
 				3AC70C7E21C9E6490010B72C /* ErrorResolve */,
-				3AC70CA921CB8EED0010B72C /* Vender */,
+				3AC70C8C21CA46070010B72C /* Managers */,
+				3AF0210721BFAD4D008A2DFF /* Model */,
+				3AF0210821BFAD5E008A2DFF /* Networking */,
 				3ABA0D5D21D752DF000B5180 /* Resource */,
+				3AF0210621BFAA37008A2DFF /* Scenes */,
+				3AF020C721BF80E5008A2DFF /* Utils */,
+				3AC70CA921CB8EED0010B72C /* Vender */,
 				3A54F38E21B8F7BA003D79E1 /* Info.plist */,
 			);
 			path = "ios-template-project";
