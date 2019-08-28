@@ -29,7 +29,7 @@ class TableView: UITableView {
         cellLayoutMarginsFollowReadableWidth = false
         keyboardDismissMode = .onDrag
         separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        tableFooterView = View()
-        tableFooterView = View()
+        tableFooterView = UIView()
+        tableFooterView = UIView()
     }
 }

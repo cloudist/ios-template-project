@@ -8,6 +8,7 @@
 
 import UIKit
 import Bugly
+import SwifterSwift
 
 final class Application {
     static let shared = Application()
@@ -17,10 +18,8 @@ final class Application {
     let dataRepository: DataRepository
     
     let authManager: AuthManager
-    let navigator: Navigator
     
     init() {
-        self.navigator = Navigator.default
         self.authManager = AuthManager.shared
         self.dataRepository = DataRepository.shared
         
@@ -41,12 +40,26 @@ final class Application {
         let loggedIn = authManager.hasToken
 
         let dataRepository = Application.shared.dataRepository
+        var vc: UIViewController
         if loggedIn {
             let viewModel = HomeTabBarViewModel(dataRepository: dataRepository)
-            navigator.show(segue: .tabBar(viewModel: viewModel), sender: nil, transition: .root(in: window))
+            vc = HomeTabBarController(viewModel: viewModel)
         } else {
             let viewModel = LoginViewModel(dataRepository: dataRepository)
-            navigator.show(segue: .login(viewModel: viewModel), sender: nil, transition: .root(in: window))
+            vc = LoginViewController(viewModel: viewModel)
         }
+        
+        UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            self.window.rootViewController = vc
+        }, completion: nil)
+    }
+    
+    func logout() {
+        AuthManager.removeToken()
+        let viewModel = LoginViewModel(dataRepository: dataRepository)
+        let vc = LoginViewController(viewModel: viewModel)
+        UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            self.window.rootViewController = vc
+        }, completion: nil)
     }
 }

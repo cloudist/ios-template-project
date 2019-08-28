@@ -22,7 +22,10 @@ class DataRepository {
 
 extension DataRepository {
     func login(username: String, password: String) -> Observable<LoginResponse> {
-        return apiService.request(Account.login(param: ["userIdentity": username, "password": password]).asMultiTarget)
-            .map(LoginResponse.self)
+//        return apiService.request(Account.login(param: ["userIdentity": username, "password": password]).asMultiTarget)
+//            .map(LoginResponse.self)
+        let user = User(id: 1, username: "struggle", name: "刘波")
+        let response = LoginResponse(token: "12345qsdas", user: user)
+        return Observable.just(response)
     }
 }

@@ -30,12 +30,10 @@ extension TabbarItem {
     private func getViewController(with viewModel: ViewModel) -> UIViewController {
         switch self {
         case .sample:
-            let vc = SampleViewController()
-            vc.viewModel = viewModel as? SampleViewModel
+            let vc = SampleViewController(viewModel: viewModel as! SampleViewModel)
             return NavigationController(rootViewController: vc)
         case .profile:
-            let vc = ProfileViewController()
-            vc.viewModel = viewModel as? ProfileViewModel
+            let vc = ProfileViewController(viewModel: viewModel as! ProfileViewModel)
             return NavigationController(rootViewController: vc)
         }
     }
@@ -48,12 +46,12 @@ extension TabbarItem {
     }
 }
 
-class HomeTabBarController: UITabBarController, Navigatable {
-    var navigator: Navigator!
+class HomeTabBarController: UITabBarController {
+
     var viewModel: HomeTabBarViewModel
     
-    init(navigator: Navigator, viewModel: HomeTabBarViewModel) {
-        self.navigator = navigator
+    init(viewModel: HomeTabBarViewModel) {
+
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -82,7 +80,6 @@ class HomeTabBarController: UITabBarController, Navigatable {
                 $0.viewController(for: self.viewModel.viewModel(for: $0))
             }
             self.setViewControllers(controllers, animated: false)
-            self.navigator.injectTabBarController(in: self)
         }).disposed(by: rx.disposeBag)
     }
 }

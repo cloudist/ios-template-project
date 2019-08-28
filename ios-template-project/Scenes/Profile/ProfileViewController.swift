@@ -10,7 +10,16 @@ import UIKit
 
 class ProfileViewController: ViewController {
     
-    var viewModel: ProfileViewModel!
+    var viewModel: ProfileViewModel
+    
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +31,8 @@ class ProfileViewController: ViewController {
         
         btn.rx.tap
             .asObservable()
-            .subscribe(onNext: { [weak self] (_) in
-                guard let self = self else { return }
-                let viewModel = LoginViewModel(dataRepository: self.viewModel.dataRepository)
-                self.navigator.show(segue: .login(viewModel: viewModel), sender: self)
+            .subscribe(onNext: { _ in
+                Application.shared.logout()
             })
             .disposed(by: rx.disposeBag)
     }

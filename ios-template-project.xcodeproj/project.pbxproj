@@ -19,17 +19,11 @@
 		3A54F3C321BA5CD1003D79E1 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3C221BA5CD1003D79E1 /* ViewControllerSpec.swift */; };
 		3A62EE2821C77C29005451F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62EE2721C77C29005451F1 /* LoginViewController.swift */; };
 		3A62EE2A21C78568005451F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62EE2921C78568005451F1 /* LoginViewModel.swift */; };
-		3ABA0D3C21D713F7000B5180 /* Scence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0D3B21D713F7000B5180 /* Scence.swift */; };
-		3ABA0D3E21D71424000B5180 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0D3D21D71424000B5180 /* Transition.swift */; };
 		3ABA0D5F21D75327000B5180 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0D5E21D75327000B5180 /* R.generated.swift */; };
 		3AC70C7B21C8FA260010B72C /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7A21C8FA260010B72C /* LoginResponse.swift */; };
 		3AC70C7D21C9E4C90010B72C /* ErrorResolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7C21C9E4C90010B72C /* ErrorResolvable.swift */; };
 		3AC70C8021CA327C0010B72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C7F21CA327C0010B72C /* ViewController.swift */; };
-		3AC70C8221CA33270010B72C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8121CA33270010B72C /* View.swift */; };
-		3AC70C8521CA337F0010B72C /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8421CA337F0010B72C /* Navigator.swift */; };
 		3AC70C8721CA39730010B72C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8621CA39730010B72C /* NavigationController.swift */; };
-		3AC70C8921CA3C870010B72C /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8821CA3C870010B72C /* BarButtonItem.swift */; };
-		3AC70C8B21CA3EC70010B72C /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8A21CA3EC70010B72C /* StackView.swift */; };
 		3AC70C8E21CA46290010B72C /* LibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8D21CA46290010B72C /* LibsManager.swift */; };
 		3AC70C9021CA49560010B72C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C8F21CA49560010B72C /* Application.swift */; };
 		3AC70C9221CA49D30010B72C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70C9121CA49D30010B72C /* AuthManager.swift */; };
@@ -102,17 +96,11 @@
 		3A54F3C221BA5CD1003D79E1 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		3A62EE2721C77C29005451F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A62EE2921C78568005451F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		3ABA0D3B21D713F7000B5180 /* Scence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scence.swift; sourceTree = "<group>"; };
-		3ABA0D3D21D71424000B5180 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		3ABA0D5E21D75327000B5180 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3AC70C7A21C8FA260010B72C /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3AC70C7C21C9E4C90010B72C /* ErrorResolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResolvable.swift; sourceTree = "<group>"; };
 		3AC70C7F21CA327C0010B72C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3AC70C8121CA33270010B72C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		3AC70C8421CA337F0010B72C /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		3AC70C8621CA39730010B72C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		3AC70C8821CA3C870010B72C /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
-		3AC70C8A21CA3EC70010B72C /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		3AC70C8D21CA46290010B72C /* LibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsManager.swift; sourceTree = "<group>"; };
 		3AC70C8F21CA49560010B72C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		3AC70C9121CA49D30010B72C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -283,10 +271,7 @@
 			children = (
 				3AC70C7F21CA327C0010B72C /* ViewController.swift */,
 				3AC70C9A21CA52F20010B72C /* ViewModel.swift */,
-				3AC70C8121CA33270010B72C /* View.swift */,
 				3AC70C8621CA39730010B72C /* NavigationController.swift */,
-				3AC70C8821CA3C870010B72C /* BarButtonItem.swift */,
-				3AC70C8A21CA3EC70010B72C /* StackView.swift */,
 				3AC70CA521CB80560010B72C /* TableViewController.swift */,
 				3AC70CA721CB810D0010B72C /* TableView.swift */,
 			);
@@ -300,16 +285,6 @@
 				3A62EE2921C78568005451F1 /* LoginViewModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		3ABA0D3A21D713E4000B5180 /* Navigator */ = {
-			isa = PBXGroup;
-			children = (
-				3AC70C8421CA337F0010B72C /* Navigator.swift */,
-				3ABA0D3B21D713F7000B5180 /* Scence.swift */,
-				3ABA0D3D21D71424000B5180 /* Transition.swift */,
-			);
-			path = Navigator;
 			sourceTree = "<group>";
 		};
 		3ABA0D5D21D752DF000B5180 /* Resource */ = {
@@ -419,7 +394,6 @@
 				3A54F38221B8F7B9003D79E1 /* AppDelegate.swift */,
 				3AF020C521BF613A008A2DFF /* AppDelegate+PushNotification.swift */,
 				3AC70C8F21CA49560010B72C /* Application.swift */,
-				3ABA0D3A21D713E4000B5180 /* Navigator */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -785,18 +759,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ABA0D3E21D71424000B5180 /* Transition.swift in Sources */,
 				3A28869221D380E800AABF47 /* ErrorResponse.swift in Sources */,
 				3AC70C7B21C8FA260010B72C /* LoginResponse.swift in Sources */,
 				3AC70CB721CC7D6F0010B72C /* SampleViewModel.swift in Sources */,
-				3AC70C8B21CA3EC70010B72C /* StackView.swift in Sources */,
 				3AF0210A21BFAE29008A2DFF /* NetworkConfig.swift in Sources */,
 				3AF0211621BFCD56008A2DFF /* User.swift in Sources */,
 				3AC70CB321CC7AC50010B72C /* ProfileViewController.swift in Sources */,
 				3AF0211221BFC9E5008A2DFF /* AccountApi.swift in Sources */,
 				3AF0210E21BFB55C008A2DFF /* DataRepository.swift in Sources */,
 				3AC70C8021CA327C0010B72C /* ViewController.swift in Sources */,
-				3AC70C8921CA3C870010B72C /* BarButtonItem.swift in Sources */,
 				3AC70CB521CC7D420010B72C /* SampleViewController.swift in Sources */,
 				3A54F38321B8F7B9003D79E1 /* AppDelegate.swift in Sources */,
 				3AC70C7D21C9E4C90010B72C /* ErrorResolvable.swift in Sources */,
@@ -806,7 +777,6 @@
 				3AC70C8E21CA46290010B72C /* LibsManager.swift in Sources */,
 				3AC70CAC21CB8F050010B72C /* RxActivityIndicator.swift in Sources */,
 				3A62EE2821C77C29005451F1 /* LoginViewController.swift in Sources */,
-				3AC70C8221CA33270010B72C /* View.swift in Sources */,
 				3AC70CA621CB80560010B72C /* TableViewController.swift in Sources */,
 				3AF0212921C24FA5008A2DFF /* UIViewController+HUD.swift in Sources */,
 				3AC70CA821CB810D0010B72C /* TableView.swift in Sources */,
@@ -821,12 +791,10 @@
 				3AC70C9421CA4B350010B72C /* Token.swift in Sources */,
 				3AF020C621BF613A008A2DFF /* AppDelegate+PushNotification.swift in Sources */,
 				3AF0210221BF9CC5008A2DFF /* CustomFont.swift in Sources */,
-				3ABA0D3C21D713F7000B5180 /* Scence.swift in Sources */,
 				3AC70CAF21CB8F6A0010B72C /* RxErrorTracker.swift in Sources */,
 				3AC70C9221CA49D30010B72C /* AuthManager.swift in Sources */,
 				3AC70CF921CCB4E70010B72C /* HomeTabBarViewModel.swift in Sources */,
 				3AC70CB921CC7D790010B72C /* ProfileViewModel.swift in Sources */,
-				3AC70C8521CA337F0010B72C /* Navigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

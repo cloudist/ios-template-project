@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         LibsManager.shared.setupLibs(with: window)
         
-//        AuthManager.removeToken()
+        AuthManager.removeToken()
         
         Application.shared.presentInitialScreen(in: window!)
         

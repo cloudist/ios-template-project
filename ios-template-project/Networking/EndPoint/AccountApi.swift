@@ -64,6 +64,4 @@ extension Account: AccessTokenAuthorizable {
             return .custom("Token")
         }
     }
-    
-    
 }

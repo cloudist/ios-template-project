@@ -82,6 +82,15 @@ extension TargetType {
     }
 }
 
+extension MultiTarget: AccessTokenAuthorizable {
+    public var authorizationType: AuthorizationType {
+        if case let MultiTarget.target(target) = self {
+            return (target as? AccessTokenAuthorizable)?.authorizationType ?? .none
+        }
+        return .none
+    }
+}
+
 extension MoyaProvider {
     func request(_ token: Target) -> Observable<Response> {
         return rx.request(token)

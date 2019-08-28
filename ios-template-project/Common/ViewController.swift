@@ -11,8 +11,7 @@ import RxSwift
 import RxCocoa
 import DZNEmptyDataSet
 
-class ViewController: UIViewController, Navigatable {
-    var navigator: Navigator!
+class ViewController: UIViewController {
     
     let isLoading = BehaviorRelay(value: false)
     
@@ -28,8 +27,8 @@ class ViewController: UIViewController, Navigatable {
     var emptyDataSetImage = R.image.empty_content()
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
-    lazy var closeBarButton: BarButtonItem = {
-        let view = BarButtonItem(image: R.image.cancel(),
+    lazy var closeBarButton: UIBarButtonItem = {
+        let view = UIBarButtonItem(image: R.image.cancel(),
                                  style: .plain,
                                  target: self,
                                  action: nil)
@@ -42,7 +41,7 @@ class ViewController: UIViewController, Navigatable {
         bindViewModel()
         
         closeBarButton.rx.tap.asObservable().subscribe(onNext: { [weak self] () in
-            self?.navigator.dismiss(sender: self)
+            self?.dismiss(animated: true, completion: nil)
         }).disposed(by: rx.disposeBag)
         
         // Observe device orientation change
@@ -114,8 +113,8 @@ extension ViewController {
         return 10
     }
     
-    func emptyView(height: CGFloat) -> View {
-        let view = View()
+    func emptyView(height: CGFloat) -> UIView {
+        let view = UIView()
         view.snp.makeConstraints { (make) in
             make.height.equalTo(height)
         }
