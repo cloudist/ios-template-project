@@ -23,12 +23,12 @@ class ViewModel {
     let dataRepository: DataRepository
     var disposeBag = DisposeBag()
     
-    var page = 1
+    var page: Int?
     let headerRefreshTrigger = PublishSubject<Void>()
     let footerRefreshTrigger = PublishSubject<Void>()
     
     let headerLoading = ActivityIndicator()
-    let footerState = BehaviorRelay(value: RxMJRefreshFooterState.default)
+    let footerState = BehaviorRelay(value: RxMJRefreshFooterState.hidden)
     
     let error = ErrorTracker()
     let loading = ActivityIndicator()
@@ -44,7 +44,7 @@ class ViewModel {
 }
 
 extension ViewModel {
-    func footerState<T>(_ items: [T]) -> RxMJRefreshFooterState {
-        return items.count < 20 ? .noMoreData : .default
+    func footerStateFromPageParam() -> RxMJRefreshFooterState {
+        return page == nil ? .noMoreData : .default
     }
 }

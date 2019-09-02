@@ -91,32 +91,15 @@ extension MultiTarget: AccessTokenAuthorizable {
     }
 }
 
-extension MoyaProvider {
-    func request(_ token: Target) -> Observable<Response> {
-        return rx.request(token)
-            .asObservable()
-            .filterSuccessfulStatusAndRedirectCodes()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-            .observeOn(MainScheduler.instance)
-            .do(onError: { (error) in
-                if let e = error as? MoyaError,
-                    case let .statusCode(response) = e,
-                    response.statusCode == 401 {
-                    AuthManager.removeToken()
-                }
-            })
-    }
-    
-    func requestWithProgress(_ token: Target) -> Observable<ProgressResponse> {
-        return rx.requestWithProgress(token)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-            .observeOn(MainScheduler.instance)
-            .do(onError: { (error) in
-                if let e = error as? MoyaError,
-                    case let .statusCode(response) = e,
-                    response.statusCode == 401 {
-                    AuthManager.removeToken()
-                }
-            })
+
+extension Observable {
+    func authHandler() -> Observable<E> {
+        return self.do(onError: { (error) in
+            if let e = error as? MoyaError,
+                case let .statusCode(response) = e,
+                response.statusCode == 401 {
+                AuthManager.removeToken()
+            }
+        })
     }
 }

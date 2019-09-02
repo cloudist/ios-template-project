@@ -31,14 +31,14 @@ class SampleViewModel: ViewModel {
                 return Observable.just(["1", "2", "3"])
                     .trackError(self.error)
                     .catchErrorJustComplete()
-            }
+            }.share(replay: 1)
         
         
         headerData.bind(to: tableData).disposed(by: disposeBag)
         footerData.map { self.tableData.value + $0 }.bind(to: tableData).disposed(by: disposeBag)
         
         let state = Observable
-            .merge(headerData.map(footerState), footerData.map(footerState))
+            .merge(headerData.mapTo(()).map(footerStateFromPageParam), footerData.mapTo(()).map(footerStateFromPageParam))
             .startWith(.hidden)
             .asDriver(onErrorJustReturn: .hidden)
         

@@ -43,12 +43,14 @@ class SampleViewController: TableViewController {
             .bind(to: viewModel.footerRefreshTrigger)
             .disposed(by: rx.disposeBag)
         
-        viewModel.headerLoading
+        viewModel.headerLoading.skip(1)
             .drive(tableView.mj_header.rx.isRefreshing)
             .disposed(by: rx.disposeBag)
         viewModel.footerState
             .bind(to: tableView.mj_footer.rx.refreshFooterState)
             .disposed(by: rx.disposeBag)
+        
+        Observable.just(()).bind(to: tableView.mj_header.rx.beginRefreshing).disposed(by: rx.disposeBag)
         
         viewModel.tableData.bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { _, ele, cell in
             cell.textLabel?.text = ele
