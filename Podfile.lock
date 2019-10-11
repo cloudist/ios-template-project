@@ -1,7 +1,4 @@
 PODS:
-  - Action (3.11.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
   - Alamofire (4.8.2)
   - Bugly (2.5.0)
   - Cache (5.2.0)
@@ -12,7 +9,6 @@ PODS:
   - Differentiator (3.1.0)
   - DZNEmptyDataSet (1.8.1)
   - FSPagerView (0.8.3)
-  - Hero (1.4.0)
   - IQKeyboardManagerSwift (6.4.1)
   - KeychainAccess (3.2.0)
   - Localize-Swift (2.0.0)
@@ -58,7 +54,6 @@ PODS:
     - SDWebImage/Core (= 5.1.0)
   - SDWebImage/Core (5.1.0)
   - SnapKit (5.0.1)
-  - SwiftDate (6.0.3)
   - SwifterSwift (5.0.0):
     - SwifterSwift/AppKit (= 5.0.0)
     - SwifterSwift/CoreGraphics (= 5.0.0)
@@ -83,7 +78,6 @@ PODS:
   - "UITextView+Placeholder (1.3.1)"
 
 DEPENDENCIES:
-  - Action
   - Alamofire
   - Bugly
   - Cache
@@ -91,7 +85,6 @@ DEPENDENCIES:
   - Device
   - DZNEmptyDataSet
   - FSPagerView
-  - Hero
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Localize-Swift
@@ -110,7 +103,6 @@ DEPENDENCIES:
   - RxViewController
   - SDWebImage
   - SnapKit
-  - SwiftDate
   - SwifterSwift
   - SwiftLint
   - UIFontComplete
@@ -118,7 +110,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Action
     - Alamofire
     - Bugly
     - Cache
@@ -127,7 +118,6 @@ SPEC REPOS:
     - Differentiator
     - DZNEmptyDataSet
     - FSPagerView
-    - Hero
     - IQKeyboardManagerSwift
     - KeychainAccess
     - Localize-Swift
@@ -149,14 +139,12 @@ SPEC REPOS:
     - RxViewController
     - SDWebImage
     - SnapKit
-    - SwiftDate
     - SwifterSwift
     - SwiftLint
     - UIFontComplete
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Action: 689181e4c3f6566844178d8a7da6fef39a9597fc
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
@@ -165,7 +153,6 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
-  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
@@ -187,12 +174,11 @@ SPEC CHECKSUMS:
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   UIFontComplete: 9542d390ee6114412a585d979b09fe820896695d
   "UITextView+Placeholder": f23df8592290d8d06078072ae1a663e11ee07ff4
 
-PODFILE CHECKSUM: 05af4bc5a3d2b558ccd368a6b07d4858c72e0c81
+PODFILE CHECKSUM: 25e5cc2cae1c672bc9ac10c9428dfe978bba881f
 
 COCOAPODS: 1.8.3

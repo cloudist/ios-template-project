@@ -1,4 +1,3 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '10.3'
 install! 'cocoapods', 
           :generate_multiple_pod_projects => true, 
@@ -11,7 +10,6 @@ def test_pods
 end
 
 target 'ios-template-project' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   inhibit_all_warnings!
 
@@ -20,30 +18,15 @@ target 'ios-template-project' do
   pod 'RxViewController'
   pod 'RxDataSources'
   pod 'RxSwiftExt'
-  pod 'Action'
   pod 'NSObject+Rx'
 
   # Networking
   pod 'Alamofire'
   pod 'Moya/RxSwift'
   pod 'ReachabilitySwift'
-  # pod 'RxStarscream'
-  # pod 'Starscream'
-  
-  # Image
   pod 'SDWebImage'
-  
-  # Date
-  pod 'SwiftDate'
-  
-  # Keyboard
-  pod 'IQKeyboardManagerSwift'
-  
-  # Auto Layout
-  pod 'SnapKit'
 
   # UI
-  pod 'Hero'
   pod 'UITextView+Placeholder'
   pod 'MJRefresh'
   pod 'RxMJ'
@@ -51,8 +34,6 @@ target 'ios-template-project' do
   pod 'FSPagerView'
   pod 'DZNEmptyDataSet'
   pod 'Localize-Swift'
-  # pod 'Texture'
-  # pod 'MGSwipeTableCell'
 
   # Storage
   pod 'KeychainAccess'
@@ -62,16 +43,15 @@ target 'ios-template-project' do
   pod 'CocoaLumberjack/Swift'
 
   # utils
+  pod 'IQKeyboardManagerSwift'
+  pod 'SnapKit'
   pod 'Device'
   pod 'UIFontComplete'
   pod 'SwifterSwift'
-  
-  # Tools
   pod 'R.swift'
   pod 'SwiftLint'
   pod 'Bugly'
-  
-  
+
   # Pods for ios-template-project
 
   target 'ios-template-projectTests' do

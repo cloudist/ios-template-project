@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Action
 import NSObject_Rx
 
 class LoginViewController: ViewController {
